@@ -4,15 +4,17 @@ import { Logger } from '../utils/logger';
 
 @TCommand
 export class TestCommand implements ICommand {
-    private logger = Logger.get();
 
     getCommand(): Command {
+        const that = this;
         return new Command('split')
             .description('Split stuff')
             .argument('<string>', 'String to split')
             .option('-s, --separator <char>', 'separator character', ',')
             .action((str, options) => {
-                this.logger.info(str.split(options.separator));
+                // Cannot use "this" context in actions, thus the need to get the logger here
+                const logger = Logger.get();
+                logger.info(str.split(options.separator));
             });
     }
 }
