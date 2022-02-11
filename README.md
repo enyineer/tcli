@@ -14,11 +14,18 @@ export class TestCommand implements ICommand {
             .argument('<string>', 'String to split')
             .option('-s, --separator <char>', 'separator character', ',')
             .action((str, options) => {
-                this.logger.info(str.split(options.separator));
+                console.log(str.split(options.separator));
             });
     }
 }
 ```
+Run this TestCommand:
+```sh
+yarn tcli split foo,bar,baz
 
+OR
+
+npm run tcli split foo,bar,baz
+```
 # Contribute
 Please add new commands as Pull-Requests. They will be reviewed and added when resolved.
