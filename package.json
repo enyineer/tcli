@@ -1,0 +1,24 @@
+{
+  "name": "tcli",
+  "version": "1.0.0",
+  "description": "Telegram CLI for useful features",
+  "main": "src/index.ts",
+  "author": "Nico Enking",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "commander": "^9.0.0",
+    "telegram": "^2.5.0",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5",
+    "winston": "^3.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.17",
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon"
+  }
+}
